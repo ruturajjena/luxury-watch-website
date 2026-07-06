@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Built By Ruturaj — The Anatomy of Precision</title>
+  <meta name="description" content="An interactive digital product film. Scroll to disassemble an ultra-luxury mechanical watch — and discover how Built By Ruturaj engineers premium AI experiences." />
+  <meta property="og:title" content="Built By Ruturaj — The Anatomy of Precision" />
+  <meta property="og:description" content="Precision. Crafted in Code. An immersive scroll-driven product film." />
+  <meta property="og:image" content="https://ruturajjena.github.io/luxury-watch-website/assets/poster/og.jpg" />
+  <meta property="og:url" content="https://ruturajjena.github.io/luxury-watch-website/" />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#050505" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='none' stroke='%23c9a962' stroke-width='2'/%3E%3Ctext x='32' y='40' font-family='Georgia' font-size='24' fill='%23f2f0ea' text-anchor='middle'%3EBR%3C/text%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="fonts/fonts.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-scene="0">
+
+  <!-- ============ LOADER ============ -->
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader-panel loader-panel--t"></div>
+    <div class="loader-panel loader-panel--b"></div>
+    <div class="loader-core">
+      <svg class="loader-dial" viewBox="0 0 120 120" aria-hidden="true">
+        <g class="loader-ticks"></g>
+        <circle cx="60" cy="60" r="44" fill="none" stroke="rgba(242,240,234,.18)" stroke-width=".75"/>
+        <circle class="loader-ring" cx="60" cy="60" r="44" fill="none" stroke="#c9a962" stroke-width="1.5"
+                stroke-dasharray="276.46" stroke-dashoffset="276.46" transform="rotate(-90 60 60)"/>
+        <text x="60" y="66" class="loader-mono">B/R</text>
+      </svg>
+      <p class="loader-word">BUILT&nbsp;BY&nbsp;RUTURAJ</p>
+      <p class="loader-status"><span id="loadStatus">CALIBRATING MOVEMENT</span>&nbsp;—&nbsp;<span id="loadPct">00</span>%</p>
+    </div>
+  </div>
+
+  <!-- ============ CINEMA STAGE ============ -->
+  <div class="stage" id="stage" aria-hidden="true">
+    <div class="stage-tilt" id="stageTilt">
+      <video id="v1" muted playsinline preload="auto"     src="assets/video/v1.mp4"></video>
+      <video id="v2" muted playsinline preload="metadata" src="assets/video/v2.mp4"></video>
+      <video id="v3" muted playsinline preload="none"     src="assets/video/v3.mp4"></video>
+      <video id="v4" muted playsinline preload="none"     src="assets/video/v4.mp4"></video>
+      <video id="v5" muted playsinline preload="none"     src="assets/video/v5.mp4"></video>
+      <video id="v6" muted playsinline preload="none"     src="assets/video/v6.mp4"></video>
+      <video id="v8" muted playsinline preload="none"     src="assets/video/v8.mp4"></video>
+    </div>
+    <div class="mlight" id="mlight"></div>
+    <div class="mlight mlight--gold" id="mlightGold"></div>
+    <div class="scrim" id="scrim"></div>
+    <div class="vignette"></div>
+  </div>
+  <canvas id="dust" aria-hidden="true"></canvas>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="bar bar--t" id="barT"></div>
+  <div class="bar bar--b" id="barB"></div>
+
+  <!-- ============ PERSISTENT HUD ============ -->
+  <header class="topbar">
+    <a class="wordmark" href="#top" data-magnetic>BUILT<span>&nbsp;BY&nbsp;</span>RUTURAJ</a>
+    <div class="readout"><span class="readout-num" id="chapNum">SC.01</span><span class="readout-sep">/</span><em class="readout-name" id="chapName">SILHOUETTE</em></div>
+  </header>
+
+  <nav class="rail" id="rail" aria-label="Chapters"></nav>
+
+  <footer class="hudfoot">
+    <div class="hudfoot-cell">T+<span id="tcode">00:00.0</span></div>
+    <div class="hudfoot-cell">FILM&nbsp;<span id="pct">000</span>%</div>
+  </footer>
+
+  <!-- ============ SCENE OVERLAYS ============ -->
+  <div class="hud" id="hud">
+
+    <!-- SC.01 — HERO -->
+    <section class="ui ui--hero" data-ui="0">
+      <p class="kicker rise">BUILT BY RUTURAJ&nbsp;&nbsp;·&nbsp;&nbsp;A DIGITAL PRODUCT FILM</p>
+      <h1 class="display display--xl">
+        <span class="line chars">The Anatomy</span>
+        <span class="line chars">of <em>Precision</em></span>
+      </h1>
+      <p class="sub rise">Crafting Premium AI Experiences.</p>
+      <div class="scrollhint rise">
+        <span>SCROLL&nbsp;TO&nbsp;DISASSEMBLE</span>
+        <i class="scrollhint-line"></i>
+      </div>
+    </section>
+
+    <!-- SC.02 — ROTATION -->
+    <section class="ui ui--left" data-ui="1">
+      <p class="scenetag rise">SC.02 — FULL ROTATION</p>
+      <h2 class="display chars">Engineered,<br /><em>not designed.</em></h2>
+      <p class="body rise">Every surface is a decision. Every decision is measured.<br/>The same discipline shapes the software I build.</p>
+      <ul class="specs rise">
+        <li><i>CALIBRE</i><b>BR-01 SKELETON</b></li>
+        <li><i>CASE</i><b>Ø 41 MM — TITANIUM GR.5</b></li>
+        <li><i>ORBIT</i><b>360° — 24 FPS</b></li>
+      </ul>
+    </section>
+
+    <!-- SC.03 — SAPPHIRE -->
+    <section class="ui ui--right" data-ui="2">
+      <p class="scenetag rise">SC.03 — CRYSTAL SEPARATION</p>
+      <h2 class="display chars">Sapphire,<br /><em>lifted.</em></h2>
+      <p class="body rise">The first layer yields. 1,900 Vickers of clarity,<br/>rising to reveal what it protected.</p>
+      <div class="anno rise"><i class="anno-line"></i><span>HARDNESS 1,900 HV&nbsp;&nbsp;·&nbsp;&nbsp;OPTICAL PURITY 99.8%</span></div>
+    </section>
+
+    <!-- SC.04 — BEZEL / ZERO-G -->
+    <section class="ui ui--centerlow" data-ui="3">
+      <h2 class="display chars">Zero gravity.<br /><em>Absolute control.</em></h2>
+      <p class="chip rise">HEX SCREWS ×12&nbsp;&nbsp;·&nbsp;&nbsp;TORQUE 0.04 N·M&nbsp;&nbsp;·&nbsp;&nbsp;BEZEL RELEASED</p>
+    </section>
+
+    <!-- SC.05 — DIAL -->
+    <section class="ui ui--left" data-ui="4">
+      <p class="scenetag rise">SC.05 — DIAL ARCHITECTURE</p>
+      <h2 class="display chars">The dial,<br /><em>deconstructed.</em></h2>
+      <ol class="parts">
+        <li class="part"><i>01</i><span>HANDS</span></li>
+        <li class="part"><i>02</i><span>HOUR MARKERS</span></li>
+        <li class="part"><i>03</i><span>CHAPTER RING</span></li>
+        <li class="part"><i>04</i><span>DATE WHEEL</span></li>
+      </ol>
+    </section>
+
+    <!-- SC.06 — MOVEMENT -->
+    <section class="ui ui--center" data-ui="5">
+      <p class="scenetag rise">SC.06 — INSIDE THE MOVEMENT</p>
+      <h2 class="display chars">Inside the<br /><em>heartbeat.</em></h2>
+      <p class="ghost" aria-hidden="true">28,800</p>
+      <p class="chip rise">VIBRATIONS PER HOUR&nbsp;&nbsp;·&nbsp;&nbsp;4 HZ ESCAPEMENT</p>
+    </section>
+
+    <!-- SC.07 — EXPLODED -->
+    <section class="ui ui--centertop" data-ui="6">
+      <h2 class="display chars">212 components.<br /><em>One purpose.</em></h2>
+      <p class="chip chip--hint rise">MOVE YOUR CURSOR — THE PERSPECTIVE FOLLOWS</p>
+    </section>
+
+    <!-- SC.08 — FEATURES -->
+    <section class="ui ui--features" data-ui="7">
+      <div class="feat-track" id="featTrack"></div>
+      <div class="feat-progress"><i id="featBar"></i></div>
+    </section>
+
+    <!-- SC.09 — CROSS-SECTION -->
+    <section class="ui ui--right" data-ui="8">
+      <p class="scenetag rise">SC.09 — CROSS-SECTION</p>
+      <h2 class="display chars">Through<br /><em>every layer.</em></h2>
+      <ul class="layers rise" id="layerList">
+        <li class="layer">CRYSTAL</li>
+        <li class="layer">DIAL</li>
+        <li class="layer">MOVEMENT</li>
+        <li class="layer">CASE</li>
+      </ul>
+    </section>
+
+    <!-- SC.10 — REASSEMBLY -->
+    <section class="ui ui--center" data-ui="9">
+      <p class="scenetag rise">SC.10 — REASSEMBLY</p>
+      <h2 class="display chars">Every part<br /><em>returns home.</em></h2>
+      <p class="chip rise">MAGNETIC ALIGNMENT&nbsp;&nbsp;·&nbsp;&nbsp;TOLERANCE ± 0.001 MM</p>
+    </section>
+
+    <!-- SC.11 — FINAL ORBIT -->
+    <section class="ui ui--bottomleft" data-ui="10">
+      <p class="scenetag rise">SC.11 — FINAL ORBIT</p>
+      <h2 class="display chars">Whole again.</h2>
+    </section>
+
+    <!-- SC.12 — BRAND -->
+    <section class="ui ui--brand" data-ui="11">
+      <svg class="brand-mark rise" viewBox="0 0 120 120" aria-hidden="true">
+        <circle cx="60" cy="60" r="52" fill="none" stroke="rgba(201,169,98,.55)" stroke-width="1"/>
+        <circle cx="60" cy="60" r="44" fill="none" stroke="rgba(242,240,234,.16)" stroke-width=".75"/>
+        <text x="60" y="67" class="brand-mono">B/R</text>
+      </svg>
+      <h2 class="display display--xl">
+        <span class="line chars">Precision.</span>
+        <span class="line chars"><em>Crafted in Code.</em></span>
+      </h2>
+      <p class="sub rise">Built By Ruturaj — Crafting Premium AI Experiences.</p>
+      <ul class="services rise">
+        <li>AI WEBSITES</li><li>AI AUTOMATION</li><li>CREATIVE ENGINEERING</li><li>3D DIGITAL EXPERIENCES</li>
+      </ul>
+      <div class="ctas rise">
+        <a class="btn btn--gold" href="mailto:jenaruturaj@gmail.com?subject=Project%20Inquiry%20—%20Built%20By%20Ruturaj" data-magnetic>BOOK A PROJECT</a>
+        <a class="btn" href="#top" id="replayBtn" data-magnetic>VIEW MY WORK</a>
+      </div>
+      <ul class="socials rise">
+        <li><a href="#" data-magnetic aria-label="X / Twitter">X</a></li>
+        <li><a href="#" data-magnetic aria-label="Instagram">IG</a></li>
+        <li><a href="#" data-magnetic aria-label="LinkedIn">IN</a></li>
+        <li><a href="#" data-magnetic aria-label="GitHub">GH</a></li>
+        <li><a href="#" data-magnetic aria-label="YouTube">YT</a></li>
+      </ul>
+      <p class="colophon rise">© MMXXVI BUILT BY RUTURAJ&nbsp;&nbsp;·&nbsp;&nbsp;ENGINEERED, NOT TEMPLATED&nbsp;&nbsp;·&nbsp;&nbsp;SHOT IN 12 SCENES</p>
+    </section>
+
+  </div>
+
+  <!-- ============ SCROLL TRACK (spacers) ============ -->
+  <main id="track">
+    <section class="scene" id="sc0"  style="height:160vh"></section>
+    <section class="scene" id="sc1"  style="height:230vh"></section>
+    <section class="scene" id="sc2"  style="height:210vh"></section>
+    <section class="scene" id="sc3"  style="height:190vh"></section>
+    <section class="scene" id="sc4"  style="height:230vh"></section>
+    <section class="scene" id="sc5"  style="height:220vh"></section>
+    <section class="scene" id="sc6"  style="height:200vh"></section>
+    <section class="scene" id="sc7"  style="height:460vh"></section>
+    <section class="scene" id="sc8"  style="height:190vh"></section>
+    <section class="scene" id="sc9"  style="height:250vh"></section>
+    <section class="scene" id="sc10" style="height:180vh"></section>
+    <section class="scene" id="sc11" style="height:260vh"></section>
+  </main>
+
+  <!-- ============ CURSOR ============ -->
+  <div class="cursor" id="cursor" aria-hidden="true">
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+  </div>
+
+  <script src="vendor/gsap.min.js"></script>
+  <script src="vendor/ScrollTrigger.min.js"></script>
+  <script src="vendor/lenis.min.js"></script>
+  <script src="vendor/split-type.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
